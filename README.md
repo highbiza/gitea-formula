@@ -1,3 +1,5 @@
+NOTE: Should not be used by others. Tweaked for ourselves.
+
 # gitea-formula
 
 A saltstack formula that installs and manages [Gitea](https://gitea.io).
