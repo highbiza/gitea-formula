@@ -69,8 +69,8 @@ MAX_SIZE      = {{ gitea.attachment.max_size }}
 MAX_FILES     = {{ gitea.attachment.max_files }}
 
 [cron]
-ENABLED  = true
-SCHEDULE = @every 1h
+ENABLED  = {{ gitea.cron.enabled }}
+SCHEDULE = {{ gitea.cron.schedule }}
 
 [session]
 PROVIDER      = file
