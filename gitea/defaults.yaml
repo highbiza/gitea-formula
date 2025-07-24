@@ -1,9 +1,7 @@
 gitea:
   config: '/var/lib/gitea/custom/conf/app.ini'
-  service:
-    name: gitea
-  version: "1.0.2"
-  sha256: "02ed9a3bb7bcd1c8f3d8888e51a0887b3c0f44b2a80d50c99f9e407e457545ab"
+  version: "1.24.3"
+  sha256: "1865e72b1302e2bae0a357b30fd747b770b622198e155c2bdf776cfbffca38b7"
   database:
     type: postgres
     host: 127.0.0.1:5432
@@ -25,19 +23,21 @@ gitea:
     ssh_listen_port: 2222
     offline_mode: false
     lfs_start_server: false
-    lfs_content_path: data/lfs
     lfs_jwt_secret: createYourOwnJWTSecret
     enable_gzip: false
     landing_page: home
+  lfs:
+    path: data/lfs
   mailer:
     enable: true
     hostname: mail.example.com
-    hostandport: mail.example.com:587
+    smtp_addr: mail.example.com:587
     from_address: git@example.com
     smtp_user: git@example.com
     smtp_password: secretPassword1234
-    skip_verify: false
+    force_trust_server_cert: false
   service:
+    name: gitea
     app_name: Gitea - Git with a cup of tea
     register_email_confirm: true
     disable_registration: true
@@ -55,6 +55,8 @@ gitea:
   log:
     mode: file
     level: Info
+  webhook:
+    allowed_host_list: loopback
   security:
     install_lock: true
     remember_password_days: 30
