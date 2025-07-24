@@ -70,7 +70,7 @@ MAX_FILES     = {{ gitea.attachment.max_files }}
 
 [cron]
 ENABLED  = {{ gitea.cron.enabled }}
-SCHEDULE = {{ gitea.cron.schedule }}
+SCHEDULE = @every {{ gitea.cron.schedule }}
 
 [session]
 PROVIDER      = file
