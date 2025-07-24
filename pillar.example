@@ -21,16 +21,17 @@ gitea:
     ssh_listen_port: 2222
     offline_mode: false
     lfs_start_server: false
-    lfs_content_path: data/lfs
     enable_gzip: false
     landing_page: home
+  lfs:
+    path: data/lfs
   mailer:
     enable: true
     hostname: mail.example.com
-    hostandport: mail.example.com:587
+    smtp_addr: mail.example.com:587
     from_address: git@example.com
     smtp_user: git@example.com
-    skip_verify: false
+    force_trust_server_cert: false
   service:
     app_name: Gitea
     disable_registration: true
