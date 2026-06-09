@@ -1,6 +1,6 @@
 gitea:
   config: '/var/lib/gitea/custom/conf/app.ini'
-  version: "1.24.3"
+  version: "1.26.2"
   sha256: "1865e72b1302e2bae0a357b30fd747b770b622198e155c2bdf776cfbffca38b7"
   database:
     type: postgres
